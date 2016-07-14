@@ -6,11 +6,20 @@
  * Time: 21:54
  */
 
-use Illuminate\Http\Response;
-
-Route::get('/', function () {
-    return response()->json([
-        'status_code' => Response::HTTP_FORBIDDEN,
-        'message' => 'Not Allowed'
-    ], Response::HTTP_FORBIDDEN);
+/**
+ * Base Route for APIs
+ */
+Route::group(['prefix' => 'api'], function () {
+    /**
+     * Base Route for Api version 1
+     */
+    Route::group(['prefix' => 'v1'], function () {
+        
+        /*
+         * USERS ROUTE
+         */
+        Route::get('users', 'UsersController@index');
+        
+        
+    });
 });

@@ -2,6 +2,7 @@
 
 namespace App\Core\Exceptions;
 
+use App\Applications\Api\Traits\Rest\ResponseHelpers;
 use Exception;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
@@ -13,6 +14,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
+
+    use ResponseHelpers;
     /**
      * A list of the exception types that should not be reported.
      *
@@ -48,10 +51,7 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         if($e  instanceof NotFoundHttpException) {
-            return response()->json([
-                'error' => true,
-                'message' =>  'Not found'
-            ], Response::HTTP_NOT_FOUND);
+            return $this->ApiResponse('Not Found', Response::HTTP_NOT_FOUND);
         }
         return parent::render($request, $e);
     }

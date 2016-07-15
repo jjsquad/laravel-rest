@@ -1,6 +1,7 @@
 # Laravel Rest
 
-[![Build Status](https://travis-ci.org/jjsquad/laravel-rest.svg?branch=master)](https://travis-ci.org/jjsquad/laravel-rest)
+[![Build Status](https://travis-ci.org/jjsquad/laravel-rest.svg?branch=master)](https://travis-ci.org/jjsquad/laravel-rest) 
+[![Dependency Status](https://www.versioneye.com/user/projects/57882b34c3d40f0032cb0da9/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57882b34c3d40f0032cb0da9)
 
 Esqueleto para aplicações de API Rest utilizando o framework Laravel (versão 5.2.29+).
 
